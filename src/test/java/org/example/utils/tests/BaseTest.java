@@ -54,4 +54,5 @@ public class BaseTest {
     public SigningScreen openSigningScreen() {
         return new SigningScreen(driver);
     }
+
 }
