@@ -4,13 +4,13 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.example.utils.screens.BaseScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-public class HomeScreen extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"WEBDRIVER\")")
+public class WebViewScreen extends BaseScreen {
+
+    @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Next-gen browser and mobile automation test framework for Node.js\")")
     public WebElement title;
 
-    public HomeScreen(AndroidDriver driver) {
+    public WebViewScreen(AndroidDriver driver) {
         super(driver);
     }
 
