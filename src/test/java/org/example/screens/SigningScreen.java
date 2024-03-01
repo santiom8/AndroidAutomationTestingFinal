@@ -1,35 +1,65 @@
 package org.example.screens;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.utils.screens.BaseScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import static org.example.utils.tests.BaseTest.wait;
 
 public class SigningScreen extends BaseScreen {
     private static final String SIGNIN_TITLE = "Sign in";
 
-    /*    @AndroidFindBy()
-        public WebElement worldButton;*/
     @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"WEBDRIVER\")")
     private WebElement textMain;
+    /*UiSelector().className("android.view.View").description("Webview")*/
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").description(\"Webview\")")
+    private WebElement webViewButton;
 
-    private WebElement termsButton;
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").description(\"Login\")")
+    private WebElement loginButton;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").description(\"Forms\")")
+    private WebElement formsButton;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").description(\"Swipe\")")
+    private WebElement swipeButton;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").description(\"Drag\")")
+    private WebElement dragButton;
 
     public SigningScreen(AndroidDriver driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public boolean verifySigninTitle() {
+    public boolean verifySigningTitle() {
         return textMain.isDisplayed();
     }
+
+    public boolean  verifyWebButton() {
+        return webViewButton.isDisplayed();
+    }
+
+   /* public void clickWebViewButton() {
+        webViewButton.click();
+    }
+
+    public void clickLoginButton() {
+        loginButton.click();
+    }
+
+    public void clickFormsButton() {
+        formsButton.click();
+    }
+
+    public void clickSwipeButton() {
+        swipeButton.click();
+    }
+
+    public void clickDragButton() {
+        dragButton.click();
+    }*/
 
     public void waitSomeSeconds(int time) {
         try {
