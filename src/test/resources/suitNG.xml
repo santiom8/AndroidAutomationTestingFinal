@@ -7,13 +7,18 @@
                value="Microsoft"/>
     <test name="Search Test">
         <classes>
-            <class name="org.example.utils.tests.NavigationMenuBarTest"/>
+            <class name="org.example.tests.NavigationMenuBarTest"/>
         </classes>
     </test>
 
+    <test name="Sign up Test">
+        <classes>
+            <class name="org.example.tests.SuccessfulSignUpTest"/>
+        </classes>
+    </test>
     <test name="Login Test">
         <classes>
-            <class name="org.example.utils.tests.SuccessfulSignUpTest"/>
+            <class name="org.example.tests.SuccessfulLoginTest"/>
         </classes>
     </test>
 </suite>

@@ -11,7 +11,7 @@ public class DataProviderLogin {
         return new Object[][] {
                 {
                         generateRandomString(6)+"@gmail.com",
-                        generateRandomString(6)
+                        generateRandomString(8)
                 }
         };
     }
