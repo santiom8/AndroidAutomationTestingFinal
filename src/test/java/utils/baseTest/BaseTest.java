@@ -1,9 +1,7 @@
-package org.example.utils.tests;
+package utils.baseTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.example.enums.MenuEnums;
-import org.example.screens.HomeScreen;
 import org.example.screens.SigningScreen;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -73,7 +71,6 @@ public class BaseTest {
 
     @AfterMethod()
     public void afterMethodFinishTesting() {
-        HomeScreen homeScreen = new HomeScreen(driver);
-        homeScreen.clickMenuItem(MenuEnums.HOME);
+       driver.quit();
     }
 }

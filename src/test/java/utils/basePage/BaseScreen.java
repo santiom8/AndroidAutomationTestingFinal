@@ -1,9 +1,10 @@
-package org.example.utils.screens;
+package utils.basePage;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.enums.MenuEnums;
+import org.example.screens.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -58,4 +59,31 @@ public class BaseScreen {
         }
         menuItem.click();
     }
+
+    //pass between screen
+    public DragScreen callDragScreen(){
+        return new DragScreen(driver);
+    }
+
+    public FormsScreen callHomeScreen(){
+        return new FormsScreen(driver);
+    }
+
+    public LoginScreen callLoginScreen(){
+        return new LoginScreen(driver);
+    }
+
+    public SwipeScreen callSwipeScreen(){
+        return new SwipeScreen(driver);
+    }
+
+    public FormsScreen callFormScreen(){
+        return new FormsScreen(driver);
+    }
+
+    public WebViewScreen callWebViewScreen(){
+        return new WebViewScreen(driver);
+    }
+
+
 }

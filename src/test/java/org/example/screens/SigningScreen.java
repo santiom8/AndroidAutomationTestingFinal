@@ -2,7 +2,7 @@ package org.example.screens;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.example.utils.screens.BaseScreen;
+import utils.basePage.BaseScreen;
 import org.openqa.selenium.support.PageFactory;
 
 public class SigningScreen extends BaseScreen {
