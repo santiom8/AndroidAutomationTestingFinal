@@ -11,7 +11,6 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Login / Sign up Form\")")
     public WebElement title;
 
-    /*por que aparece?*/
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Sign up\")")
     public WebElement loginUpButton;
 

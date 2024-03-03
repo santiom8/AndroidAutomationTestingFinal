@@ -5,6 +5,8 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.example.enums.MenuEnums;
 import org.example.screens.HomeScreen;
 import org.example.screens.SigningScreen;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -44,6 +46,17 @@ public class BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public boolean verifyElementIsDisplayed(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.isDisplayed();
+    }
+
+    public void clickElement(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.click();
     }
 
     public static void setUpCapabilities(UiAutomator2Options capabilities) {

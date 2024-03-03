@@ -7,7 +7,7 @@
                value="Microsoft"/>
     <test name="Search Test">
         <classes>
-            <class name="org.example.utils.tests.KiwiTests"/>
+            <class name="org.example.utils.tests.NavigationMenuBarTest"/>
         </classes>
     </test>
 

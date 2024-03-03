@@ -3,6 +3,7 @@ package org.example.utils.tests;
 import org.example.enums.MenuEnums;
 import org.example.screens.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,7 @@ public class NavigationMenuBarTest extends BaseTest {
     public void tryTermsOfUse() {
         //Home screen
         SigningScreen signingScreen = openSigningScreen();
-
+ /*       signingScreen.waitSomeSeconds(20);*/
         HomeScreen homeScreen = signingScreen.callTheHomeScreen();
         wait.until(ExpectedConditions.visibilityOf(homeScreen.getTitle()));
 /*        signingScreen.waitSomeSeconds(20);*/

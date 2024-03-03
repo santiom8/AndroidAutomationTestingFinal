@@ -58,5 +58,4 @@ public class BaseScreen {
         }
         menuItem.click();
     }
-
 }

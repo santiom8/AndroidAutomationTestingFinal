@@ -4,17 +4,17 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.example.utils.screens.BaseScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-public class HomeScreen extends BaseScreen {
-    @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"WEBDRIVER\")")
+public class DragScreen extends BaseScreen {
+
+    @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Drag and Drop\")")
     public WebElement title;
 
-    public HomeScreen(AndroidDriver driver) {
+    public DragScreen(AndroidDriver driver) {
         super(driver);
     }
 
-    public WebElement getTitle() {
+    public  WebElement getTitle() {
         return title;
     }
 }
