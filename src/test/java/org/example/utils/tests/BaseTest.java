@@ -2,8 +2,11 @@ package org.example.utils.tests;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.example.enums.MenuEnums;
+import org.example.screens.HomeScreen;
 import org.example.screens.SigningScreen;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -28,7 +31,7 @@ public class BaseTest {
         setUpCapabilities(capabilities);
         try {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
-            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -55,4 +58,9 @@ public class BaseTest {
         return new SigningScreen(driver);
     }
 
+    @AfterMethod()
+    public void afterMethodFinishTesting() {
+        HomeScreen homeScreen = new HomeScreen(driver);
+        homeScreen.clickMenuItem(MenuEnums.HOME);
+    }
 }
