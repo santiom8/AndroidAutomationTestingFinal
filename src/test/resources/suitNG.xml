@@ -10,4 +10,10 @@
             <class name="org.example.utils.tests.KiwiTests"/>
         </classes>
     </test>
+
+    <test name="Login Test">
+        <classes>
+            <class name="org.example.utils.tests.SuccessfulSignUpTest"/>
+        </classes>
+    </test>
 </suite>
