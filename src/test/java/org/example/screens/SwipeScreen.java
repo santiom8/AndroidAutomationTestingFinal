@@ -10,10 +10,10 @@ public class SwipeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().textContains(\"Swipe horizontal\")")
     public WebElement title;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\").textContains(\"WebdriverIO is fully open source and can be found on GitHub\")")
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text( \"FULLY OPEN SOURCE\")")
     public WebElement swipeHorizontalZero;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\").textContains(\"WebdriverIO has a great community that supports all members.\")")
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"GREAT COMMUNITY\")")
     public WebElement swipeHorizontalOne;
 
     public SwipeScreen(AndroidDriver driver) {

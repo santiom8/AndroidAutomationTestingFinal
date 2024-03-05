@@ -4,28 +4,26 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.example.screens.SigningScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.Properties;
 
 public class BaseTest {
 
     private static final String PROPERTY_FILE = "src/test/resources/config.properties";
     private static Properties properties = new Properties();
-
     public static AndroidDriver driver;
-
     public static WebDriverWait wait;
+
+    protected static final Logger logger = LogManager.getLogger(BaseTest.class);
 
     @BeforeMethod(alwaysRun = true)
     public void environmentSetUp() {
@@ -85,8 +83,6 @@ public class BaseTest {
 
     @AfterMethod()
     public void afterMethodFinishTesting() {
-        if (driver != null) {
-            driver.quit();
-        }
+        driver.quit();
     }
 }
