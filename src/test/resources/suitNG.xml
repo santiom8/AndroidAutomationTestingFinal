@@ -5,7 +5,7 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="textToSearch"
                value="Microsoft"/>
-    <test name="Search Test">
+   <!--<test name="Search Test">
         <classes>
             <class name="org.example.tests.NavigationMenuBarTest"/>
         </classes>
@@ -19,6 +19,11 @@
     <test name="Login Test">
         <classes>
             <class name="org.example.tests.SuccessfulLoginTest"/>
+        </classes>
+    </test>-->
+    <test name="Swipe Test">
+        <classes>
+            <class name="org.example.tests.SwipeCardTest"/>
         </classes>
     </test>
 </suite>

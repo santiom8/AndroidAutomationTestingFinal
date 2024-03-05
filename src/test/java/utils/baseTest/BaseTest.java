@@ -4,6 +4,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.example.screens.SigningScreen;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -13,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class BaseTest {
@@ -52,6 +55,15 @@ public class BaseTest {
         return element.isDisplayed();
     }
 
+    public boolean verifyElementIsNotDisplayed(WebElement element) {
+        try {
+            wait.until(ExpectedConditions.invisibilityOf(element));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public void clickElement(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
@@ -65,12 +77,16 @@ public class BaseTest {
         capabilities.setCapability("automationName", properties.getProperty("automationName"));
         //capabilities.setCapability("app", "C:\\Users\\santiago.correa03\\Downloads\\android.wdio.native.app.v1.0.8.apk");
     }
+
     public SigningScreen openSigningScreen() {
         return new SigningScreen(driver);
     }
 
+
     @AfterMethod()
     public void afterMethodFinishTesting() {
-       driver.quit();
+      /*  if (driver != null) {
+            driver.quit();
+        }*/
     }
 }
