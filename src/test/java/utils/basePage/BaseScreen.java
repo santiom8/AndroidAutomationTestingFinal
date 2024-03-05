@@ -6,7 +6,12 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.example.enums.MenuEnums;
 import org.example.screens.*;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.PageFactory;
+
+import java.time.Duration;
+import java.util.Arrays;
 
 public class BaseScreen {
 
@@ -61,29 +66,42 @@ public class BaseScreen {
     }
 
     //pass between screen
-    public DragScreen callDragScreen(){
+    public DragScreen callDragScreen() {
         return new DragScreen(driver);
     }
 
-    public FormsScreen callHomeScreen(){
+    public FormsScreen callHomeScreen() {
         return new FormsScreen(driver);
     }
 
-    public LoginScreen callLoginScreen(){
+    public LoginScreen callLoginScreen() {
         return new LoginScreen(driver);
     }
 
-    public SwipeScreen callSwipeScreen(){
+    public SwipeScreen callSwipeScreen() {
         return new SwipeScreen(driver);
     }
 
-    public FormsScreen callFormScreen(){
+    public FormsScreen callFormScreen() {
         return new FormsScreen(driver);
     }
 
-    public WebViewScreen callWebViewScreen(){
+    public WebViewScreen callWebViewScreen() {
         return new WebViewScreen(driver);
     }
 
+    public void swipeHorizontal(WebElement element, int side) {
+        int centerX = element.getLocation().getX() + element.getSize().getWidth() / 2;
+        int centerY = element.getLocation().getY() + element.getSize().getHeight() / 2;
 
+        int offsetX = side * (element.getSize().getWidth() / 2);
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipe = new Sequence(finger, 1)
+                .addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), centerX, centerY))
+                .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                .addAction(finger.createPointerMove(Duration.ofMillis(100), PointerInput.Origin.viewport(), centerX + offsetX, centerY))
+                .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Arrays.asList(swipe));
+    }
 }
