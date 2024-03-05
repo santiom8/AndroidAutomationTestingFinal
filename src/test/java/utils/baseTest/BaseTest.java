@@ -85,8 +85,8 @@ public class BaseTest {
 
     @AfterMethod()
     public void afterMethodFinishTesting() {
-      /*  if (driver != null) {
+        if (driver != null) {
             driver.quit();
-        }*/
+        }
     }
 }
