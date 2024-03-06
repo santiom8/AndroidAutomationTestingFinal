@@ -104,4 +104,19 @@ public class BaseScreen {
 
         driver.perform(Arrays.asList(swipe));
     }
+
+    public void swipeVerticalUp(WebElement element) {
+        int centerX = element.getLocation().getX() + element.getSize().getWidth() / 2;
+        int startY = element.getLocation().getY() + element.getSize().getHeight() / 2;
+        int endY = startY - 1000;
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipe = new Sequence(finger, 1)
+                .addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), centerX, startY))
+                .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                .addAction(finger.createPointerMove(Duration.ofMillis(100), PointerInput.Origin.viewport(), centerX, endY))
+                .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(Arrays.asList(swipe));
+    }
 }

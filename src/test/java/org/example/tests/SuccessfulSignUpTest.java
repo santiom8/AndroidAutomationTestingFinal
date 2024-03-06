@@ -14,14 +14,6 @@ import java.util.logging.Logger;
 
 public class SuccessfulSignUpTest extends BaseTest {
 
-      /* @BeforeClass
-    public void setUpClass() {
-        SigningScreen signingScreen = openSigningScreen();
-        HomeScreen homeScreen = signingScreen.callTheHomeScreen();
-        wait.until(ExpectedConditions.visibilityOf(homeScreen.getTitle()));
-        homeScreen.clickMenuItem(MenuEnums.LOGIN);
-    }*/
-
     private static int testIterationCount = 0;
 
     @Test(

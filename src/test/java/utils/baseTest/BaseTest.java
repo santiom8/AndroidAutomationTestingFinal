@@ -73,7 +73,6 @@ public class BaseTest {
         capabilities.setCapability("appPackage", properties.getProperty("appPackage"));
         capabilities.setCapability("appActivity", properties.getProperty("appActivity"));
         capabilities.setCapability("automationName", properties.getProperty("automationName"));
-        //capabilities.setCapability("app", "C:\\Users\\santiago.correa03\\Downloads\\android.wdio.native.app.v1.0.8.apk");
     }
 
     public SigningScreen openSigningScreen() {
