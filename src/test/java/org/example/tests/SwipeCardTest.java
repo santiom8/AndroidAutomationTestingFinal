@@ -26,15 +26,26 @@ public class SwipeCardTest extends BaseTest {
         Assert.assertTrue(verifyElementIsDisplayed(swipeScreen.getTitle()));
         logger.info("Swipe screen is displayed.");
         Assert.assertTrue(verifyElementIsDisplayed(swipeScreen.getSwipeHorizontalZero()));
-        logger.info("First swipe card is displayed.");
+        logger.info("First swipe card is displayed FULLY OPEN SOURCE");
         swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalZero(), SwipeDirection.LEFT.getValue());
-        logger.info("Swipe left.");
-        Assert.assertTrue(verifyElementIsNotDisplayed(swipeScreen.getSwipeHorizontalZero()));
-        logger.info("First swipe card is not displayed.");
-        Assert.assertTrue(verifyElementIsDisplayed(swipeScreen.getSwipeHorizontalOne()));
-        logger.info("Second swipe card is displayed.");
-        swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalOne(), SwipeDirection.RIGHT.getValue());
-        logger.info("Swipe right.");
+        logger.info("Swipe right to the first card GREAT COMMUNITY");
+        swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalOne(), SwipeDirection.LEFT.getValue());
+        logger.info("Swipe right to the second card JS.FOUNDATION");
+        swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalTwo(), SwipeDirection.LEFT.getValue());
+        logger.info("Swipe left to the third card SUPPORT VIDEOS");
+        swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalThree(), SwipeDirection.LEFT.getValue());
+        logger.info("Swipe left to the fourth card EXTENDABLE");
+        swipeScreen.swipeHorizontal(swipeScreen.getSwipeHorizontalFour(), SwipeDirection.LEFT.getValue());
+        logger.info("Swipe left to the fifth card COMPATIBLE");
+        Assert.assertTrue(verifyElementIsDisplayed(swipeScreen.getSwipeHorizontalFive()));
+        logger.info("Fifth swipe card is displayed.");
+        Assert.assertTrue(verifyElementIsNotDisplayed(swipeScreen.getSwipeHorizontalFour()));
+        logger.info("Fourth swipe card is not displayed.");
+        logger.info("COMPATIBLE card is displayed and the test is completed.");
+        swipeScreen.swipeVerticalUp(swipeScreen.titleSwipeScreen);
+        Assert.assertTrue(verifyElementIsDisplayed(swipeScreen.theLastElementVerticalSwipe));
+        logger.info("The element is displayed after vertical swipe.");
+
 
     }
 }

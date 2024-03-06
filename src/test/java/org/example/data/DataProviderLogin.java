@@ -1,6 +1,5 @@
 package org.example.data;
 import org.testng.annotations.DataProvider;
-import org.testng.reporters.AbstractXmlReporter;
 
 import java.util.Random;
 
